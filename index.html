@@ -9,14 +9,19 @@
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
   }
   
   .product {
     background-color: #fff;
-    padding: 10px;
-    margin: 10px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
   
   img {
@@ -24,18 +29,17 @@
     height: auto;
     border: 2px solid #333;
     border-radius: 8px;
+    margin-bottom: 20px;
   }
   
   button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 10px 20px;
     background-color: #333;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    margin-top: 10px;
   }
 </style>
 </head>
@@ -49,8 +53,6 @@
   <button onclick="buyViaWhatsApp('Product 1')">Buy Now</button>
   <button onclick="joinWhatsAppGroup()">Join Group</button>
 </div>
-
-<!-- Add more products similarly -->
 
 <script>
   function buyViaWhatsApp(productName) {
