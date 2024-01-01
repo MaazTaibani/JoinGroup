@@ -3,39 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <title>Madina Textiles</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .product {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #333;
+    border-radius: 8px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+</style>
 </head>
-<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+<body>
 
-<!-- Navigation Bar -->
-<div style="background-color: #333; color: white; padding: 10px; text-align: center;">
-  <a href="#" style="color: white; text-decoration: none;">Home</a>
+<!-- Product 1 -->
+<div class="product">
+  <img src="path_to_image1.jpg" alt="Product 1">
+  <p>Product Name</p>
+  <div>$50</div>
+  <button onclick="buyViaWhatsApp('Product 1')">Buy Now</button>
+  <button onclick="joinWhatsAppGroup()">Join Group</button>
 </div>
 
-<!-- Product Listings -->
-<div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 10px;">
-  <!-- Product 1 -->
-  <div style="width: 90%; margin: 10px; border: 1px solid #ccc; padding: 10px; text-align: center; background-color: #fff;">
-    <img src="path_to_image1.jpg" alt="Product 1" style="max-width: 100%; height: auto; border: 2px solid #333; padding: 5px;">
-    <p>Product Name</p>
-    <div style="background-color: #f9f9f9; padding: 5px; margin-top: 10px; border: 1px solid #ccc;">
-      <span>$50</span>
-    </div>
-    <button onclick="buyViaWhatsApp('Product 1')" style="margin-top: 10px; padding: 10px; background-color: #333; color: white; border: none; cursor: pointer;">Buy Now</button>
-    <button onclick="joinWhatsAppGroup()" style="margin-top: 10px; padding: 10px; background-color: #333; color: white; border: none; cursor: pointer;">Join Group</button>
-  </div>
-  <!-- Add more products similarly -->
-</div>
-
-<!-- Footer -->
-<div style="background-color: #333; color: white; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%;">
-  <p>Follow us on <a href="https://www.instagram.com/madina_textiles_official/" style="color: white; text-decoration: none;">Instagram</a></p>
-  <p>WhatsApp Group: <a href="YOUR_WHATSAPP_GROUP_LINK_HERE" style="color: white; text-decoration: none;">Join Now</a></p>
-  <p>Address: Shop No.3, Madina Textiles, Vaishali Nagar, Jogeshwari West, W, Mumbai, Maharashtra 400102</p>
-  <p>Mob: 9987939968</p>
-</div>
+<!-- Add more products similarly -->
 
 <script>
-  // JavaScript Functions
   function buyViaWhatsApp(productName) {
     let message = "I want to buy this: " + productName;
     window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(message), "_blank");
