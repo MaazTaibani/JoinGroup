@@ -1,39 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our WhatsApp Group</title>
-    
-    <!-- Facebook Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'YOUR_PIXEL_ID'); // Replace 'YOUR_PIXEL_ID' with your Facebook Pixel ID
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
-    
-    <script>
-        // Facebook Pixel Event Tracking
-        fbq('track', 'Lead');
-        
-        // Delay the redirect by a short period (e.g., 100 milliseconds) to ensure the Pixel event is tracked
-        setTimeout(function() {
-            // Immediately redirect users to the WhatsApp group link
-            window.location.replace("https://chat.whatsapp.com/GUrGZOnAXGj2BqbPcOgKVO");
-        }, 100);
-    </script>
+<meta charset="UTF-8">
+<title>Madina Textiles</title>
+<style>
+  /* General styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .product {
+    width: 90%;
+    margin: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .price-box {
+    background-color: #f9f9f9;
+    padding: 5px;
+    margin-top: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .product {
+      width: 100%;
+    }
+  }
+</style>
 </head>
 <body>
+
+<!-- Navigation Bar -->
+<nav>
+  <a href="#">Home</a>
+</nav>
+
+<!-- Product Listings -->
+<div class="product-list">
+  <!-- Product 1 -->
+  <div class="product">
+    <img src="path_to_image1.jpg" alt="Product 1">
+    <p>Product Name</p>
+    <div class="price-box">
+      <span>$50</span>
+    </div>
+    <button onclick="buyViaWhatsApp('Product 1')">Buy Now</button>
+    <button onclick="joinWhatsAppGroup()">Join Group</button>
+  </div>
+  <!-- Add more products similarly -->
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Follow us on <a href="https://www.instagram.com/madina_textiles_official/">Instagram</a></p>
+  <p>WhatsApp Group: <a href="YOUR_WHATSAPP_GROUP_LINK_HERE">Join Now</a></p>
+  <p>Address: Shop No.3, Madina Textiles, Vaishali Nagar, Jogeshwari West, W, Mumbai, Maharashtra 400102</p>
+  <p>Mob: 9987939968</p>
+</footer>
+
+<script>
+  // JavaScript Functions
+  function buyViaWhatsApp(productName) {
+    let message = "I want to buy this: " + productName;
+    // Replace with your actual WhatsApp link with the embedded message
+    window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(message), "_blank");
+  }
+
+  function joinWhatsAppGroup() {
+    // Replace with your actual WhatsApp group link
+    window.open("YOUR_WHATSAPP_GROUP_LINK_HERE", "_blank");
+  }
+</script>
+
 </body>
 </html>
