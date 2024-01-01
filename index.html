@@ -24,11 +24,14 @@
     <!-- End Facebook Pixel Code -->
     
     <script>
-        // Track event when users click the link and get redirected to the WhatsApp group
+        // Facebook Pixel Event Tracking
         fbq('track', 'Lead');
         
-        // Immediately redirect users to the WhatsApp group link
-        window.location.replace("https://chat.whatsapp.com/GUrGZOnAXGj2BqbPcOgKVO");
+        // Delay the redirect by a short period (e.g., 100 milliseconds) to ensure the Pixel event is tracked
+        setTimeout(function() {
+            // Immediately redirect users to the WhatsApp group link
+            window.location.replace("https://chat.whatsapp.com/GUrGZOnAXGj2BqbPcOgKVO");
+        }, 100);
     </script>
 </head>
 <body>
