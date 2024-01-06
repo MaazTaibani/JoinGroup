@@ -217,7 +217,43 @@
             `;
             productList.innerHTML += productCard;
         });
+    
+// Track when a user clicks on "Buy on WhatsApp"
+    function buyProduct(index) {
+        const product = products[index];
+        const message = encodeURIComponent(`I want to buy this ${product.name}`);
+        window.open(`https://api.whatsapp.com/send?phone=9987939968&text=${message}`);
+        
+        // Custom event tracking for Buy on WhatsApp
+        fbq('trackCustom', 'ClickedBuyOnWhatsApp', {
+            product_name: product.name
+        });
+    }
 
+    // Track when a user clicks on "Join WhatsApp Group"
+    function joinGroup() {
+        window.open('https://chat.whatsapp.com/GUrGZOnAXGj2BqbPcOgKVO');
+        
+        // Custom event tracking for Join WhatsApp Group
+        fbq('trackCustom', 'ClickedJoinWhatsAppGroup');
+    }
+
+    // Track user's session duration on the website
+    let startTime;
+
+    window.onload = function() {
+        startTime = new Date();
+    };
+
+    window.onbeforeunload = function() {
+        const endTime = new Date();
+        const timeSpent = (endTime - startTime) / 1000; // Time in seconds
+        
+        // Custom event tracking for user session duration
+        fbq('trackCustom', 'UserSessionDuration', {
+            duration_seconds: timeSpent
+        });
+    };
         // Mock Instagram followers (Replace with actual count if you have an API)
         document.getElementById('instagramFollowers').innerText = '1.4k'; // Example count
 
